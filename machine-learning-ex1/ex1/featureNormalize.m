@@ -26,19 +26,11 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
-
-mu = mean(X(:,1))
-sigma = std(X(:,1))
-indicies = 1:size(X,2)
-
- for i=indicies,
-   XminusMu=X(:,i)-mu(i);
-   X_norm(:,i)=XminusMu/sigma(i);
- end
-
-
-
-
+mu = mean(X)
+sigma = std(X)
+for iter = 1:size(X, 2)
+  X_norm(:,iter) = (X(:,iter) - mu(iter)) / sigma(iter);
+end
 
 % ============================================================
 
