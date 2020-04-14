@@ -15,8 +15,12 @@ figure; hold on;
 
 
 
-
-
+% Find Indices of Positive and Negative Examples
+positive = find(y==1);
+negative = find(y==0);
+% Plot Examples
+plot(X(positive, 1), X(positive, 2), 'k+','LineWidth', 1, 'MarkerSize', 7);
+plot(X(negative, 1), X(negative, 2), 'ko', 'MarkerFaceColor', 'y', 'MarkerSize', 7);
 
 
 
