@@ -62,12 +62,60 @@ Theta2_grad = zeros(size(Theta2));
 %               and Theta2_grad from Part 2.
 %
 
+% Matrix(:,2:end). % exclude first column of matrix
+
+eye_matrix = eye(num_labels);
+y_matrix = eye_matrix(y,:); % expand y outputs into matrix of single values
+
+% BEGIN FORWARD PROPAGATION %
+
+a1 = [ones(size(X, 1), 1) X]; % add column of 1's to X
+z2 = a1*Theta1'; % z2 is a product of a1 & Theta1
+a2 = sigmoid(z2);
+a2 = [ones(size(a2, 1), 1) a2]; % add column of 1's to a2 (bias units)
+z3 = a2*Theta2'; % z3 is a product of a2 & Theta2
+a3 = sigmoid(z3);
+
+% END FORWARD PROPAGATION %
+
+% BEGIN COST FUNCTION %
+
+J = (1/m) * sum(sum((-y_matrix.*log(a3) ...
+- (1-y_matrix) .* log(1-a3)))); % double-sum to end up with scalar
+
+% END COST FUNCTION %
+
+% BEGIN REGULARIZATION %
+
+Theta1s=Theta1(:,2:end); % exclude bias
+Theta2s=Theta2(:,2:end); % exclude bias
+reg_term=lambda/(2*m) * ( sum(sum(Theta1s.^2)) + sum(sum(Theta2s.^2)) );
+J = (1/m) * sum(sum((-y_matrix.*log(a3) ...
+- (1-y_matrix) .* log(1-a3)))) + reg_term;
+
+% END REGULARIZATION %
+
+% BEGIN BACK PROPAGATION %
+
+Delta1=0;
+Delta2=0;
+
+d3=a3-y_matrix;
+d2=d3*Theta2s.*sigmoidGradient(z2);
+
+Delta1 = d2'*a1;
+Delta2 = d3'*a2;
+
+p1 = lambda/m * [zeros(size(Theta1, 1), 1) Theta1(:, 2:end)];
+p2 = lambda/m * [zeros(size(Theta2, 1), 1) Theta2(:, 2:end)];
+
+
+Theta1_grad = 1/m .* Delta1 + p1;
+Theta2_grad = 1/m .* Delta2 + p2;
 
 
 
-
-
-
+% END BACK PROPAGATION %
 
 
 
