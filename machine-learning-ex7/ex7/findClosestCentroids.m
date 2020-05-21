@@ -22,7 +22,13 @@ idx = zeros(size(X,1), 1);
 %
 
 
-
+for i = 1:size(X,1)
+  distances = zeros(K, 1);
+  for k=1:K
+    distances(k) = sumsq(X(i,:) - centroids(k, :));
+  end
+  [val idx(i)] = min(distances);
+end
 
 
 
