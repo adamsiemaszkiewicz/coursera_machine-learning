@@ -3,7 +3,7 @@
 * Instructor: [Andrew Ng](http://www.andrewng.org/)
 * Link: [Machine Learning](https://www.coursera.org/learn/machine-learning/)
 
-## Introduction
+## Comments
 
 This repo contains all my work for this course. All the code base and images, are taken from [Machine Learning](https://www.coursera.org/learn/machine-learning/).
 
