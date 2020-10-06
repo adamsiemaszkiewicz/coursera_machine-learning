@@ -7,7 +7,7 @@
 
 This repo contains all my work for this course. All the code base and images, are taken from [Machine Learning](https://www.coursera.org/learn/machine-learning/).
 
-*The topic of machine learning/artificial intelligence was of my interest since 2018. I took this course out of curiosity during coronavirus lockdown to take a deeper look at the topic and learn how to apply the concepts behind them. It had taken me around 2 months to get through and profoundly motivated me to develop my skills further.*
+*The topic of machine learning/artificial intelligence had been of my interest since 2018. I took this course out of pure curiosity during coronavirus lockdown to take a deeper look at the topic and learn how to apply the concepts behind them. It had taken me around 2 months to get through and eventually motivated me to develop my machine learning skills further.*
 
 ## Modules
 
