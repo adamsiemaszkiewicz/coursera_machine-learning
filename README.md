@@ -1,4 +1,4 @@
-# Machine Learning Course on Coursera
+# Machine Learning Course (Coursera)
 **by Stanford University**
 * Instructor: [Andrew Ng](http://www.andrewng.org/)
 * Link: [Machine Learning](https://www.coursera.org/learn/machine-learning/)
